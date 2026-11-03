@@ -41,10 +41,15 @@ class TestCalculator(unittest.TestCase):
     def test_divide_negative(self):
         self.assertEqual(self.calc.divide(-10, 5), -2)
         self.assertEqual(self.calc.divide(5, -10), 0)
-        # self.assertEqual(self.calc.divide(-10, -5), 2)
+        self.assertEqual(self.calc.divide(-10, -5), 2)
 
-
-
+    def test_modulo(self):
+        self.assertEqual(self.calc.modulo(10, 3), 1)
+        self.assertEqual(self.calc.modulo(3, 10), 3)
+    def test_modulo_negative(self):
+        self.assertEqual(self.calc.modulo(-10, 3), 2)
+        self.assertEqual(self.calc.modulo(3, -10), -7)
+        self.assertEqual(self.calc.modulo(-10, -3), -1)
 
 if __name__ == '__main__':
     unittest.main()
